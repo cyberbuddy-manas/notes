@@ -45,6 +45,8 @@ function openData(id) {
 
 	title.value = titleData;
 	desc.value = descData;
+
+	document.querySelector(".back").addEventListener('click', ()=> {updatingData(id);});
 }
 
 document.querySelector(".back").addEventListener('click', openHome)
@@ -59,6 +61,7 @@ function createNote(title, id) {
 	}
 	
 	var h1 = document.createElement("h1");
+	h1.id = "title" + id;
 	h1.innerHTML = title;
 	h1.addEventListener('click', ()=> {openData(id)});
 	
@@ -83,6 +86,11 @@ function createNote(title, id) {
 	document.querySelector('.blank').style.display = 'none';
 }
 
+function updateNote(id) {
+	var title = document.querySelector("#title" + id);
+	console.log(title);
+}
+
 function sendingData() {
 	var title = document.querySelector("#title");
 	var desc = document.querySelector("#description");
@@ -96,6 +104,18 @@ function sendingData() {
 		
 		id = id + 1;
 		window.localStorage.setItem('id', id);
+	}
+}
+
+function updatingData(id) {
+	var title = document.querySelector("#title");
+	var desc = document.querySelector("#description");
+
+	if (title.value != "" || desc.value != "") {
+		window.localStorage.setItem('title' + id, title.value);
+		window.localStorage.setItem('desc' + id, desc.value);
+
+		updateNote(id);		
 	}
 }
 
