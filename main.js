@@ -2,6 +2,7 @@ var local = window.localStorage;
 
 var id = local.getItem('id');
 
+
 if (id == undefined) {
 	local.setItem('id', 1);
 }
@@ -9,7 +10,7 @@ if (id == undefined) {
 function openCreate() {
 	var home = document.getElementById("home");
 	home.style.display = "none";
-	
+
 	var create = document.getElementById("create");
 	create.style.display = "unset";
 
@@ -26,9 +27,10 @@ document.querySelector(".btn").onclick = openCreate;
 function openHome() {
 	var home = document.getElementById("home");
 	home.style.display = "unset";
-	
+
 	var create = document.getElementById("create");
 	create.style.display = "none";
+	// time= "Created on "+getFullDate()+"<br>At "+getTime();
 }
 
 function openData(id) {
@@ -46,12 +48,53 @@ function openData(id) {
 	title.value = titleData;
 	desc.value = descData;
 
-	document.querySelector(".back").addEventListener('click', ()=> {updatingData(id);});
+	document.querySelector(".back").addEventListener('click', () => { updatingData(id); });
+
 }
 
 document.querySelector(".back").addEventListener('click', openHome)
 
-function createNote(title, id) {
+function getFullDate() {
+	var date = new Date();
+	var currentDate = date.getDate();
+	var currentMonth = date.getMonth();
+	var currentYear = date.getFullYear();
+	if (currentDate < 10) currentDate = '0' + currentDate;
+	if (currentMonth < 10) currentMonth = '0' + currentMonth;
+
+	return currentDate + "." + currentMonth + "." + currentYear;
+}
+
+function getTime() {
+	let date = new Date();
+	let h = date.getHours();
+	let m = date.getMinutes();
+	let session = "AM";
+
+	if (h == 0) {
+		h = 12;
+	}
+	if (h > 12) {
+		h = h - 12;
+		session = "PM";
+	}
+
+	if (h < 10) {
+		h = "0" + h;
+	}
+	if (m < 10) {
+		m = "0" + m;
+	}
+
+
+
+	let time = h + " " + ":" + " " + m;
+	let merit = session;
+
+	return time + " " + merit;
+}
+
+function createNote(title, time, id) {
 	var div1 = document.createElement('div');
 	div1.className = "note"
 	div1.id = "note" + id;
@@ -59,30 +102,33 @@ function createNote(title, id) {
 	if (title == "") {
 		title = "Untitled";
 	}
-	
 	var h1 = document.createElement("h1");
 	h1.id = "title" + id;
 	h1.innerHTML = title;
-	h1.addEventListener('click', ()=> {openData(id)});
-	
+
+	h1.addEventListener('click', () => { openData(id) });
+
 	var div2 = document.createElement('div');
-	
+
+
+
 	var h2 = document.createElement('h2');
-	h2.innerHTML = "Created on 30.06.2022";
-	
+	h2.id = "time" + id;
+	h2.innerHTML = time;
+
 	var figure = document.createElement('figure');
 	figure.className = "settings";
-	
+
 	var div3 = document.createElement('div');
 	var div4 = document.createElement('div');
 	var div5 = document.createElement('div');
-	
+
 	figure.append(div3, div4, div5);
 	div2.append(h2, figure);
 	div1.append(h1, div2);
-	
+
 	document.querySelector(".sheet").append(div1);
-	
+
 	document.querySelector('.blank').style.display = 'none';
 }
 
@@ -94,14 +140,16 @@ function updateNote(id) {
 function sendingData() {
 	var title = document.querySelector("#title");
 	var desc = document.querySelector("#description");
+	var time = "Created on " + getFullDate() + "<br>At " + getTime();
 	var id = parseInt(window.localStorage.getItem('id'));
 
 	if (title.value != "" || desc.value != "") {
 		window.localStorage.setItem('title' + id, title.value);
 		window.localStorage.setItem('desc' + id, desc.value);
+		window.localStorage.setItem('time' + id, time);
 
-		createNote(title.value, id);
-		
+		createNote(title.value, time, id);
+
 		id = id + 1;
 		window.localStorage.setItem('id', id);
 	}
@@ -110,21 +158,27 @@ function sendingData() {
 function updatingData(id) {
 	var title = document.querySelector("#title");
 	var desc = document.querySelector("#description");
+	var time = document.querySelector("#time");
+
 
 	if (title.value != "" || desc.value != "") {
 		window.localStorage.setItem('title' + id, title.value);
 		window.localStorage.setItem('desc' + id, desc.value);
+		window.localStorage.setItem('time' + id, time.value);
 
-		updateNote(id);		
+		updateNote(id);
 	}
 }
 
 function loadNotes() {
+	// localStorage.removeItem('id');
+	// localStorage.removeItem('title');
 	var id = parseInt(window.localStorage.getItem('id'));
 
 	for (let i = 1; i < id; i++) {
 		var title = window.localStorage.getItem('title' + i);
-		createNote(title, i);
+		var time = window.localStorage.getItem('time' + i);
+		createNote(title, time, i);
 	}
 }
 
