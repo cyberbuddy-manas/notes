@@ -4,17 +4,18 @@ var id = local.getItem('id');
 
 const docBody = document.body;
 
-// SELECT CONTAINER
+// SELECT DARK MODE TOGGLE BUTTON
 const darkModeToggle = document.querySelector(".dark-mode-toggle");
 
 // FUNCTION TO IMPLEMENT DARK MODE
 function darkMode() {
 	const sheet = document.querySelector(".sheet");
 	const notes = Array.from(document.querySelectorAll(".note"));
-	const input = document.getElementById("title");
-	const textArea = document.getElementById("description");
+	const noteTitle = document.getElementById("title");
+	const noteBody = document.getElementById("description");
 
 	if (darkModeToggle.classList.contains("to-dark")) {
+
 		darkModeToggle.classList.remove("to-dark");
 		darkModeToggle.classList.add("to-light");
 
@@ -26,12 +27,14 @@ function darkMode() {
 			note.classList.add("light-font");
 		});
 
-		input.style.backgroundColor = "#333";
-		input.style.color = "#fff";
+		noteTitle.style.backgroundColor = "#333";
+		noteTitle.style.color = "#fff";
 
-		textArea.style.backgroundColor = "#333";
-		textArea.style.color = "#fff";
+		noteBody.style.backgroundColor = "#333";
+		noteBody.style.color = "#fff";
+
 	} else {
+
 		darkModeToggle.classList.remove("to-light");
 		darkModeToggle.classList.add("to-dark");
 
@@ -43,29 +46,21 @@ function darkMode() {
 			note.classList.remove("light-font");
 		});
 
-		input.style.backgroundColor = "#fff";
-		input.style.color = "#000";
+		noteTitle.style.backgroundColor = "#fff";
+		noteTitle.style.color = "#000";
 
-		textArea.style.backgroundColor = "#fff";
-		textArea.style.color = "#000";
+		noteBody.style.backgroundColor = "#fff";
+		noteBody.style.color = "#000";
+
 	}
 }
 
+// EVENT LISTENER TO TRIGGER "darkMode()"
 darkModeToggle.addEventListener("click", darkMode);
 
 if (id == undefined) {
 	local.setItem('id', 1);
 }
-
-let content = document.getElementsByTagName('body')[0];
-let darkMode = document.getElementById('dark-mode');
-
-darkMode.addEventListener('click', function () {
-		darkMode.classList.toggle('active');
-		content.classList.toggle('night');
-})
-
-
 
 function openCreate() {
 	var home = document.getElementById("home");
@@ -109,6 +104,7 @@ function openData(id) {
 	desc.value = descData;
 
 	document.querySelector(".back").addEventListener('click', () => { updatingData(id); });
+}
 
 document.querySelector(".back").addEventListener('click', openHome)
 
@@ -157,12 +153,9 @@ function createNote(title, time, id) {
 	div1.className = "note"
 	div1.id = "note" + id;
 
-	// CHECK IF BODY HAS "dark-mode" CLASS BEFORE CREATING A NOTE
-	if (docBody.classList.contains("dark-mode")) {
-		div1.classList.add("light-font");
-	} else {
-		div1.classList.remove("light-font");
-	}
+	// CHECK IF <body> HAS "dark-mode" CLASS BEFORE CREATING A NOTE
+	if (docBody.classList.contains("dark-mode")) div1.classList.add("light-font");
+	else div1.classList.remove("light-font");
 
 	if (title == "") {
 		title = "Untitled";
@@ -223,7 +216,6 @@ function sendingData() {
 
 		createNote(title.value, time, id);
 
-
 		createNote(title.value, id);
 
 		id = id + 1;
@@ -259,4 +251,3 @@ function loadNotes() {
 }
 
 loadNotes();
-

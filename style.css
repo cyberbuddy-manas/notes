@@ -1,20 +1,19 @@
 :root {
-	--accent: #FFE03E;
-	--p-text: #262626;
-	--placeholder: #B7B7B7;
-     --background: #F1F1F1;
+  --accent: #ffe03e;
+  --p-text: #262626;
+  --placeholder: #b7b7b7;
+  --background: #f1f1f1;
 
-     /* --background: #000;
+  /* --background: #000;
 	 --accent:#FFE03E;
 	 --placeholder: #FFF;
 	 --p-text: #fff; */
-	
 }
 
 * {
-	margin: 0;
-	padding: 0;
-	font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
 }
 
 ::-webkit-scrollbar {
@@ -32,558 +31,533 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
-/* dark mode option */
-
-label{
-	position: absolute;
-	width: 45px;
-	height: 22px;
-	top: 20px;
-	right: 20px;
-	border: 2px solid;
-	border-radius: 20px;
-
-}
-label:before {
-	position: absolute;
-	content: "";
-	width: 20px;
-	height: 20px;
-	top: 1px;
-	left: 1px;
-	border-radius: 50%;
-	cursor: pointer;
-	background: #000;
-	transition: 0.4s;
-
-	
-}
-label.active:before{
-	background:#fff;
-	left: 24px;
-}
-body.night {
-	  --background: #000;
-	 --accent:#FFE03E;
-	 --placeholder: #FFF;
-	 --p-text: #fff;
-}
-
-
 
 body {
-	background-color:var(--background);
-	display: grid;
-	place-items: center;
-	height: 100vh;
-	transition: 0.3s all;
+  background-color: var(--background);
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  transition: 0.3s all;
 }
 
 body.dark-mode {
-	color: #fff;
-	background-color: #000;
+  color: #fff;
+  background-color: #000;
 }
 
 body.dark-mode input,
 body.dark-mode textarea {
-	color: #fff;
+  color: #fff;
 }
 
 section {
-	background-color:var(--background);
-	width: 550px;
-	height: 600px;
-	box-shadow: 0 4px 19px rgba(0, 0, 0, 0.1);
+  width: 550px;
+  height: 600px;
+  box-shadow: 0 4px 19px rgba(0, 0, 0, 0.1);
 }
 
 .nav {
-	position: relative;
-	width: 100%;
-	height: 80px;
-	background-color: var(--accent);
-	display: grid;
-	place-items: center;
-	text-transform: uppercase;
-	font-size: 20px;
-	color: var(--p-text);
+  position: relative;
+  width: 100%;
+  height: 80px;
+  background-color: var(--accent);
+  display: grid;
+  place-items: center;
+  text-transform: uppercase;
+  font-size: 20px;
+  color: var(--p-text);
 }
 
 /* DARK MODE TOGGLE */
 .dark-mode-toggle {
-	position: fixed;
-	bottom: 5rem;
-	right: 4rem;
-	display: flex;
-	align-items: center;
-	border: 1px solid #777;
-	width: 3.5rem;
-	height: 3.5rem;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	border-radius: 50%;
-	transition: 0.3s all;
+  position: fixed;
+  bottom: 5rem;
+  right: 4rem;
+  display: flex;
+  align-items: center;
+  border: 1px solid #777;
+  width: 3.5rem;
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: 0.3s all;
 }
 
 .dark-mode-toggle:hover {
-	cursor: pointer;
+  cursor: pointer;
 }
 
 .dark-mode-toggle:active {
-	transform: scale(0.94);
+  transform: scale(0.94);
 }
 
 .dark-mode-toggle i {
-	font-size: 1.25rem;
+  font-size: 1.25rem;
 }
 
 .dark-mode-toggle.to-dark {
-	background-color: #000;
+  background-color: #000;
 }
 
 .dark-mode-toggle.to-dark i {
-	color: #fff;
+  color: #fff;
 }
 
 .dark-mode-toggle.to-light {
-	background-color: #09e209;
+  background-color: #09e209;
 }
 
 .dark-mode-toggle.to-light i {
-	color: #000;
+  color: #000;
 }
 
 .sheet {
-	height: calc(100% - 80px);
-	width: 100%;
-	overflow-y: scroll;
-	padding: 0;
-	transition: 0.3s background-color;
+  height: calc(100% - 80px);
+  width: 100%;
+  overflow-y: scroll;
+  padding: 0;
+  transition: 0.3s background-color;
 }
 
 .blank {
-	color: var(--background);
-	font-weight: 400;
-	font-size: 22px;
-	text-align: center;
-	margin-left: 10px;
-	margin-top: 200px;
+  color: var(--placeholder);
+  font-weight: 400;
+  font-size: 22px;
+  text-align: center;
+  margin-left: 10px;
+  margin-top: 200px;
 }
 
 .btn {
-	background-color: var(--accent);
-	width: 55px;
-	height: 55px;
-	border-radius: 50%;
-	display: grid;
-	place-items: center;
-	cursor: pointer;
-	position: relative;
-	left: 450px;
-	bottom: 75px;
+  background-color: var(--accent);
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  position: relative;
+  left: 450px;
+  bottom: 75px;
 }
 
 .btn div {
-	width: 3px;
-	height: 30px;
-	background-color: var(--p-text);
-	position: absolute;
+  width: 3px;
+  height: 30px;
+  background-color: var(--p-text);
+  position: absolute;
 }
 
 .btn div:nth-child(1) {
-	transform: rotate(90deg);
+  transform: rotate(90deg);
 }
 
 .btn:hover div:nth-child(1) {
-	animation: 1s rotate1;
+  animation: 1s rotate1;
 }
 
 .btn:hover div:nth-child(2) {
-	animation: 1s rotate2;
+  animation: 1s rotate2;
 }
 
 @keyframes rotate1 {
-	0% {
-		transform: rotate(0deg);
-	}
+  0% {
+    transform: rotate(0deg);
+  }
 
-	100% {
-		transform: rotate(360deg);
-	}
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes rotate2 {
-	0% {
-		transform: rotate(90deg);
-	}
+  0% {
+    transform: rotate(90deg);
+  }
 
-	100% {
-		transform: rotate(450deg);
-	}
+  100% {
+    transform: rotate(450deg);
+  }
 }
 
 /*====== Component CSS =======*/
 
 .note {
-	width: calc(100% - 60px);
-	height: 90px;
-	border-bottom: 2px solid rgba(0,0,0, 0.1);
-	padding: 20px 40px;
-	padding-right: 20px;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
+  width: calc(100% - 60px);
+  height: 90px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  padding: 20px 40px;
+  padding-right: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .note h1 {
-	font-weight: 400;
-	color: var(--p-text);
-	font-size: 24px;
-	cursor: pointer;
-	transition: 0.3s;
+  font-weight: 400;
+  color: var(--p-text);
+  font-size: 24px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
 .note h1:hover {
-	color:var(--accent);
+  color: rgba(0, 0, 0, 0.55);
+}
+
+body.dark-mode .note h1:hover {
+  color: var(--accent);
 }
 
 .note div {
-	display: flex;
-	justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .note h2 {
-	font-weight: 400;
-	color:var(--p-text);
-	font-size: 15px;
-	display: flex;
-	align-items: flex-end;
+  font-weight: 400;
+  color: var(--p-text);
+  font-size: 15px;
+  display: flex;
+  align-items: flex-end;
 }
 
 .note .settings {
-	width: 20px;
-	height: 35px;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	align-items: center;
-	cursor: pointer;
+  width: 20px;
+  height: 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
 }
 
 .note .settings div {
-	width: 8px;
-	height: 8px;
-	border-radius: 50%;
-	background-color: black;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: black;
 }
 
 .note.light-font * {
-	color: #fff;
+  color: #fff;
 }
 
 /*====== Create Section ======*/
 
 #create {
-	display: none;
+  display: none;
 }
 
 .nav2 {
-	width: 100%;
-	height: 80px;
-	background-color: var(--accent);
+  width: 100%;
+  height: 80px;
+  background-color: var(--accent);
 
-	display: flex;
-	align-items: center;
+  display: flex;
+  align-items: center;
 
-	text-transform: uppercase;
-	font-size: 20px;
-	color: var(--p-text);
+  text-transform: uppercase;
+  font-size: 20px;
+  color: var(--p-text);
 }
 
 .nav2 .back {
-	width: 45px;
-	height: 45px;
-	border-radius: 50%;
-	background-color: var(--p-text);
-	position: absolute;
-	margin-left: 25px;
-	cursor: pointer;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: var(--p-text);
+  position: absolute;
+  margin-left: 25px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .nav2 .back div {
-	position: absolute;
-	width: 30%;
-	height: 3px;
-	background-color: var(--background);
-	border-radius: 5px;
+  position: absolute;
+  width: 30%;
+  height: 3px;
+  background-color: var(--background);
+  border-radius: 5px;
 }
 
 .nav2 .back div:nth-child(1) {
-	width: 55%;
-	height: 2.5px;
-	margin-left: 5px;
+  width: 55%;
+  height: 2.5px;
+  margin-left: 5px;
 }
 
 .nav2 .back div:nth-child(2) {
-	transform: rotate(-45deg);
-	margin-bottom: 9px;
-	margin-right: 12px;
+  transform: rotate(-45deg);
+  margin-bottom: 9px;
+  margin-right: 12px;
 }
 
 .nav2 .back div:nth-child(3) {
-	transform: rotate(45deg);
-	margin-top: 9px;
-	margin-right: 12px;
+  transform: rotate(45deg);
+  margin-top: 9px;
+  margin-right: 12px;
 }
 
 .nav2 h1 {
-	width: 100%;
-	text-align: center;
+  width: 100%;
+  text-align: center;
 }
 
 .sheet2 {
-	width: 100%;
-	height: calc(100% - 80px);
-	display: flex;
-	flex-direction: column;
-
+  width: 100%;
+  height: calc(100% - 80px);
+  display: flex;
+  flex-direction: column;
 }
 
 .sheet2 input[type="text"] {
-	padding: 30px 40px;
-	font-size: 26px;
-	color:var(--placeholder);
-	border: none;
-	line-height: 40px;
-	border-bottom: 2px solid rgba(0, 0, 0, 1);
-	background-color: var(--background);
+  padding: 30px 40px;
+  font-size: 26px;
+  color: rgba(0, 0, 0, 0.8);
+  border: none;
+  line-height: 40px;
+  border-bottom: 2px solid rgba(0, 0, 0, 1);
+  background-color: var(--background);
 }
 
 .sheet2 input[type="text"]:focus {
-	outline: none;
+  outline: none;
 }
 
 .sheet2 textarea {
-	height: calc(100% - 180px);
-	width: calc(100% - 80px);
-	padding: 30px 40px;
-	font-size: 18px;
-	border: none;
-	resize: none;
-	background-color: var(--background);
-	color: var(--p-text);
+  height: calc(100% - 180px);
+  width: calc(100% - 80px);
+  padding: 30px 40px;
+  font-size: 18px;
+  border: none;
+  resize: none;
+  background-color: var(--background);
+  color: var(--p-text);
 }
 
 .sheet2 textarea:focus {
-	outline: none;
+  outline: none;
 }
-
 
 /*====== Media Query ======*/
 
-@media only screen and (max-width: 600px) {
-	::-webkit-scrollbar {
-		width: 0.5 vw;
-	  }
-	  
-	  body {
-		  background-color: #F1F1F1;
-		  display: grid;
-		  place-items: center;
-		  height: 100vh;
-	  }
-	  
-	  section {
-		  background-color: white;
-		  width: 88vw;
-		  height: 120vw;
-		  box-shadow: 0 0.2vw 0.95vw rgba(0, 0, 0, 0.1);
-	  }
-	  
-	  .nav {
-		  width: 100%;
-		  height: 14vw;
-		  background-color: var(--accent);
-	  
-		  display: grid;
-		  place-items: center;
-		  text-transform: uppercase;
-		  font-size: 4vw;
-		  color: var(--p-text);
-	  }
-	  
-	  .sheet {
-		  height: calc(100% - 4vw);
-		  width: 100%;
-		  overflow-y: scroll;
-		  padding: 0;
-	  }
-	  
-	  .blank {
-		  color: var(--placeholder);
-		  font-weight: 400;
-		  font-size: 19vw;
-		  text-align: center;
-		  margin-left: 0.5vw;
-		  margin-top: 10vw;
-	  }
-	  
-	  .btn {
-		  background-color: var(--accent);
-		  width: 10vw;
-		  height: 10vw;
-		  border-radius: 50%;
-		  display: grid;
-		  place-items: center;
-		  cursor: pointer;
-		  position: relative;
-		  left: 70vw;
-		  bottom: 23.75vw;
-	  }
-	  
-	  .btn div {
-		  width: 0.25vw;
-		  height: 1.5vw;
-		  background-color: var(--p-text);
-		  position: absolute;
-	  }
-	  
-	  /*====== Component CSS =======*/
-	  
-	  .note {
-		  width: calc(100% - 3vw);
-		  height: 9vw;
-		  border-bottom: 0.1vw solid rgba(0, 0, 0, 0.1);
-		  padding: 1vw 2vw;
-		  padding-right: 1vw;
-		  display: flex;
-		  flex-direction: column;
-		  justify-content: space-between;
-	  }
-	  
-	  .note h1 {
-		  font-weight: 400;
-		  color: rgba(0, 0, 0, 0.7);
-		  font-size: 4vw;
-		  cursor: pointer;
-		  transition: 0.3s;
-	  }
-	  
-	  
-	  .note h2 {
-		  font-weight: 400;
-		  color: rgba(0, 0, 0, 0.4);
-		  font-size: 2vw;
-		  display: flex;
-		  align-items: flex-end;
-	  }
-	  
-	  .note .settings {
-		  width: 2vw;
-		  height: 3vw;
-		  display: flex;
-		  flex-direction: column;
-		  justify-content: space-between;
-		  align-items: center;
-		  cursor: pointer;
-	  }
-	  
-	  .note .settings div {
-		  width: 0.6vw;
-		  height: 0.6vw;
-		  border-radius: 50%;
-		  background-color: black;
-	  }
-	  
-	  /*====== Create Section ======*/
-	  
-	  #create {
-		  display: none;
-	  }
-	  
-	  .nav2 {
-		  width: 100%;
-		  height: 14vw;
-		  background-color: var(--accent);
-	  
-		  display: flex;
-		  align-items: center;
-	  
-		  text-transform: uppercase;
-		  font-size: 4vw;
-		  color: var(--p-text);
-	  }
-	  
-	  .nav2 .back {
-		  width: 5vw;
-		  height: 5vw;
-		  border-radius: 50%;
-		  background-color: rgba(255, 255, 255, 0.9);
-		  position: absolute;
-		  margin-left: 1.25vw;
-		  cursor: pointer;
-		  display: flex;
-		  justify-content: center;
-		  align-items: center;
-	  }
-	  
-	  .nav2 .back div {
-		  position: absolute;
-		  width: 30%;
-		  height: 0.5vw;
-		  background-color: rgba(0, 0, 0, 0.8);
-		  border-radius: 0.35vw;
-	  }
-	  
-	  .nav2 .back div:nth-child(1) {
-		  width: 55%;
-		  height: 0.125vw;
-		  margin-left: 0.250vw;
-	  }
-	  
-	  .nav2 .back div:nth-child(2) {
-		  transform: rotate(-45deg);
-		  margin-bottom: 0.5vw;
-		  margin-right: 0.6vw;
-	  }
-	  
-	  .nav2 .back div:nth-child(3) {
-		  transform: rotate(45deg);
-		  margin-top: 0.5vw;
-		  margin-right: 0.6vw;
-	  }
-	  
-	  .nav2 h1 {
-		  width: 100%;
-		  text-align: center;
-	  }
-	  
-	  .sheet2 {
-		  width: 100%;
-		  height: calc(100% - 4vw);
-		  display: flex;
-		  flex-direction: column;
-	  }
-	  
-	  .sheet2 input[type="text"] {
-		  padding: 1.5vw 2vw;
-		  font-size: 3vw;
-		  color: rgba(0, 0, 0, 0.8);
-		  border: none;
-		  line-height: 2vw;
-		  border-bottom: 0.1vw solid rgba(0, 0, 0, 0.1);
-	  }
-	  
-	  .sheet2 textarea {
-		  height: calc(100% - 9vw);
-		  width: calc(100% - 4vw);
-		  padding: 1.5vw 2vw;
-		  font-size: 3vw;
-		  border: none;
-		  resize: none;
-	  }
+@media only screen and (max-width: 768px) {
+  .dark-mode-toggle {
+    bottom: 3rem;
+    right: 2.3rem;
+  }
+}
 
-}  
+@media only screen and (max-width: 600px) {
+  ::-webkit-scrollbar {
+    width: 0.5 vw;
+  }
+
+  body {
+    background-color: #f1f1f1;
+    display: grid;
+    place-items: center;
+    height: 100vh;
+  }
+
+  section {
+    background-color: white;
+    width: 88vw;
+    height: 120vw;
+    box-shadow: 0 0.2vw 0.95vw rgba(0, 0, 0, 0.1);
+  }
+
+  .nav {
+    width: 100%;
+    height: 14vw;
+    background-color: var(--accent);
+
+    display: grid;
+    place-items: center;
+    text-transform: uppercase;
+    font-size: 4vw;
+    color: var(--p-text);
+  }
+
+  /* DARK MODE TOGGLE */
+  .dark-mode-toggle {
+    bottom: 7vw;
+    height: 3.3rem;
+    width: 3.3rem;
+  }
+
+  .sheet {
+    height: calc(100% - 4vw);
+    width: 100%;
+    overflow-y: scroll;
+    padding: 0;
+  }
+
+  .blank {
+    color: var(--placeholder);
+    font-weight: 400;
+    font-size: 19vw;
+    text-align: center;
+    margin-left: 0.5vw;
+    margin-top: 10vw;
+  }
+
+  .btn {
+    background-color: var(--accent);
+    width: 10vw;
+    height: 10vw;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    position: relative;
+    left: 70vw;
+    bottom: 23.75vw;
+  }
+
+  .btn div {
+    width: 0.25vw;
+    height: 1.5vw;
+    background-color: var(--p-text);
+    position: absolute;
+  }
+
+  /*====== Component CSS =======*/
+
+  .note {
+    width: calc(100% - 3vw);
+    height: 9vw;
+    border-bottom: 0.1vw solid rgba(0, 0, 0, 0.1);
+    padding: 1vw 2vw;
+    padding-right: 1vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .note h1 {
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 4vw;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .note h2 {
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.4);
+    font-size: 2vw;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .note .settings {
+    width: 2vw;
+    height: 3vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .note .settings div {
+    width: 0.6vw;
+    height: 0.6vw;
+    border-radius: 50%;
+    background-color: black;
+  }
+
+  /*====== Create Section ======*/
+
+  #create {
+    display: none;
+  }
+
+  .nav2 {
+    width: 100%;
+    height: 14vw;
+    background-color: var(--accent);
+
+    display: flex;
+    align-items: center;
+
+    text-transform: uppercase;
+    font-size: 4vw;
+    color: var(--p-text);
+  }
+
+  .nav2 .back {
+    width: 5vw;
+    height: 5vw;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.9);
+    position: absolute;
+    margin-left: 1.25vw;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .nav2 .back div {
+    position: absolute;
+    width: 30%;
+    height: 0.5vw;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 0.35vw;
+  }
+
+  .nav2 .back div:nth-child(1) {
+    width: 55%;
+    height: 0.125vw;
+    margin-left: 0.25vw;
+  }
+
+  .nav2 .back div:nth-child(2) {
+    transform: rotate(-45deg);
+    margin-bottom: 0.5vw;
+    margin-right: 0.6vw;
+  }
+
+  .nav2 .back div:nth-child(3) {
+    transform: rotate(45deg);
+    margin-top: 0.5vw;
+    margin-right: 0.6vw;
+  }
+
+  .nav2 h1 {
+    width: 100%;
+    text-align: center;
+  }
+
+  .sheet2 {
+    width: 100%;
+    height: calc(100% - 4vw);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sheet2 input[type="text"] {
+    padding: 1.5vw 2vw;
+    font-size: 3vw;
+    color: rgba(0, 0, 0, 0.8);
+    border: none;
+    line-height: 2vw;
+    border-bottom: 0.1vw solid rgba(0, 0, 0, 0.1);
+  }
+
+  .sheet2 textarea {
+    height: calc(100% - 9vw);
+    width: calc(100% - 4vw);
+    padding: 1.5vw 2vw;
+    font-size: 3vw;
+    border: none;
+    resize: none;
+  }
+}
