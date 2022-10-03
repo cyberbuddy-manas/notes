@@ -31,6 +31,17 @@ body {
 	display: grid;
 	place-items: center;
 	height: 100vh;
+	transition: 0.3s all;
+}
+
+body.dark-mode {
+	color: #fff;
+	background-color: #000;
+}
+
+body.dark-mode input,
+body.dark-mode textarea {
+	color: #fff;
 }
 
 section {
@@ -41,6 +52,7 @@ section {
 }
 
 .nav {
+	position: relative;
 	width: 100%;
 	height: 80px;
 	background-color: var(--accent);
@@ -52,11 +64,57 @@ section {
 	color: var(--p-text);
 }
 
+/* DARK MODE TOGGLE */
+.dark-mode-toggle {
+	position: fixed;
+	bottom: 5rem;
+	right: 4rem;
+	display: flex;
+	align-items: center;
+	border: 1px solid #777;
+	width: 3.5rem;
+	height: 3.5rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	transition: 0.3s all;
+}
+
+.dark-mode-toggle:hover {
+	cursor: pointer;
+}
+
+.dark-mode-toggle:active {
+	transform: scale(0.94);
+}
+
+.dark-mode-toggle i {
+	font-size: 1.25rem;
+}
+
+.dark-mode-toggle.to-dark {
+	background-color: #000;
+}
+
+.dark-mode-toggle.to-dark i {
+	color: #fff;
+}
+
+.dark-mode-toggle.to-light {
+	background-color: #09e209;
+}
+
+.dark-mode-toggle.to-light i {
+	color: #000;
+}
+
 .sheet {
 	height: calc(100% - 80px);
 	width: 100%;
 	overflow-y: scroll;
 	padding: 0;
+	transition: 0.3s background-color;
 }
 
 .blank {
@@ -173,6 +231,10 @@ section {
 	height: 8px;
 	border-radius: 50%;
 	background-color: black;
+}
+
+.note.light-font * {
+	color: #fff;
 }
 
 /*====== Create Section ======*/
