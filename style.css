@@ -76,6 +76,17 @@ body {
 	display: grid;
 	place-items: center;
 	height: 100vh;
+	transition: 0.3s all;
+}
+
+body.dark-mode {
+	color: #fff;
+	background-color: #000;
+}
+
+body.dark-mode input,
+body.dark-mode textarea {
+	color: #fff;
 }
 
 section {
@@ -86,6 +97,7 @@ section {
 }
 
 .nav {
+	position: relative;
 	width: 100%;
 	height: 80px;
 	background-color: var(--accent);
@@ -96,11 +108,57 @@ section {
 	color: var(--p-text);
 }
 
+/* DARK MODE TOGGLE */
+.dark-mode-toggle {
+	position: fixed;
+	bottom: 5rem;
+	right: 4rem;
+	display: flex;
+	align-items: center;
+	border: 1px solid #777;
+	width: 3.5rem;
+	height: 3.5rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	transition: 0.3s all;
+}
+
+.dark-mode-toggle:hover {
+	cursor: pointer;
+}
+
+.dark-mode-toggle:active {
+	transform: scale(0.94);
+}
+
+.dark-mode-toggle i {
+	font-size: 1.25rem;
+}
+
+.dark-mode-toggle.to-dark {
+	background-color: #000;
+}
+
+.dark-mode-toggle.to-dark i {
+	color: #fff;
+}
+
+.dark-mode-toggle.to-light {
+	background-color: #09e209;
+}
+
+.dark-mode-toggle.to-light i {
+	color: #000;
+}
+
 .sheet {
 	height: calc(100% - 80px);
 	width: 100%;
 	overflow-y: scroll;
 	padding: 0;
+	transition: 0.3s background-color;
 }
 
 .blank {
@@ -219,6 +277,10 @@ section {
 	background-color: black;
 }
 
+.note.light-font * {
+	color: #fff;
+}
+
 /*====== Create Section ======*/
 
 #create {
@@ -319,3 +381,209 @@ section {
 	outline: none;
 }
 
+
+/*====== Media Query ======*/
+
+@media only screen and (max-width: 600px) {
+	::-webkit-scrollbar {
+		width: 0.5 vw;
+	  }
+	  
+	  body {
+		  background-color: #F1F1F1;
+		  display: grid;
+		  place-items: center;
+		  height: 100vh;
+	  }
+	  
+	  section {
+		  background-color: white;
+		  width: 88vw;
+		  height: 120vw;
+		  box-shadow: 0 0.2vw 0.95vw rgba(0, 0, 0, 0.1);
+	  }
+	  
+	  .nav {
+		  width: 100%;
+		  height: 14vw;
+		  background-color: var(--accent);
+	  
+		  display: grid;
+		  place-items: center;
+		  text-transform: uppercase;
+		  font-size: 4vw;
+		  color: var(--p-text);
+	  }
+	  
+	  .sheet {
+		  height: calc(100% - 4vw);
+		  width: 100%;
+		  overflow-y: scroll;
+		  padding: 0;
+	  }
+	  
+	  .blank {
+		  color: var(--placeholder);
+		  font-weight: 400;
+		  font-size: 19vw;
+		  text-align: center;
+		  margin-left: 0.5vw;
+		  margin-top: 10vw;
+	  }
+	  
+	  .btn {
+		  background-color: var(--accent);
+		  width: 10vw;
+		  height: 10vw;
+		  border-radius: 50%;
+		  display: grid;
+		  place-items: center;
+		  cursor: pointer;
+		  position: relative;
+		  left: 70vw;
+		  bottom: 23.75vw;
+	  }
+	  
+	  .btn div {
+		  width: 0.25vw;
+		  height: 1.5vw;
+		  background-color: var(--p-text);
+		  position: absolute;
+	  }
+	  
+	  /*====== Component CSS =======*/
+	  
+	  .note {
+		  width: calc(100% - 3vw);
+		  height: 9vw;
+		  border-bottom: 0.1vw solid rgba(0, 0, 0, 0.1);
+		  padding: 1vw 2vw;
+		  padding-right: 1vw;
+		  display: flex;
+		  flex-direction: column;
+		  justify-content: space-between;
+	  }
+	  
+	  .note h1 {
+		  font-weight: 400;
+		  color: rgba(0, 0, 0, 0.7);
+		  font-size: 4vw;
+		  cursor: pointer;
+		  transition: 0.3s;
+	  }
+	  
+	  
+	  .note h2 {
+		  font-weight: 400;
+		  color: rgba(0, 0, 0, 0.4);
+		  font-size: 2vw;
+		  display: flex;
+		  align-items: flex-end;
+	  }
+	  
+	  .note .settings {
+		  width: 2vw;
+		  height: 3vw;
+		  display: flex;
+		  flex-direction: column;
+		  justify-content: space-between;
+		  align-items: center;
+		  cursor: pointer;
+	  }
+	  
+	  .note .settings div {
+		  width: 0.6vw;
+		  height: 0.6vw;
+		  border-radius: 50%;
+		  background-color: black;
+	  }
+	  
+	  /*====== Create Section ======*/
+	  
+	  #create {
+		  display: none;
+	  }
+	  
+	  .nav2 {
+		  width: 100%;
+		  height: 14vw;
+		  background-color: var(--accent);
+	  
+		  display: flex;
+		  align-items: center;
+	  
+		  text-transform: uppercase;
+		  font-size: 4vw;
+		  color: var(--p-text);
+	  }
+	  
+	  .nav2 .back {
+		  width: 5vw;
+		  height: 5vw;
+		  border-radius: 50%;
+		  background-color: rgba(255, 255, 255, 0.9);
+		  position: absolute;
+		  margin-left: 1.25vw;
+		  cursor: pointer;
+		  display: flex;
+		  justify-content: center;
+		  align-items: center;
+	  }
+	  
+	  .nav2 .back div {
+		  position: absolute;
+		  width: 30%;
+		  height: 0.5vw;
+		  background-color: rgba(0, 0, 0, 0.8);
+		  border-radius: 0.35vw;
+	  }
+	  
+	  .nav2 .back div:nth-child(1) {
+		  width: 55%;
+		  height: 0.125vw;
+		  margin-left: 0.250vw;
+	  }
+	  
+	  .nav2 .back div:nth-child(2) {
+		  transform: rotate(-45deg);
+		  margin-bottom: 0.5vw;
+		  margin-right: 0.6vw;
+	  }
+	  
+	  .nav2 .back div:nth-child(3) {
+		  transform: rotate(45deg);
+		  margin-top: 0.5vw;
+		  margin-right: 0.6vw;
+	  }
+	  
+	  .nav2 h1 {
+		  width: 100%;
+		  text-align: center;
+	  }
+	  
+	  .sheet2 {
+		  width: 100%;
+		  height: calc(100% - 4vw);
+		  display: flex;
+		  flex-direction: column;
+	  }
+	  
+	  .sheet2 input[type="text"] {
+		  padding: 1.5vw 2vw;
+		  font-size: 3vw;
+		  color: rgba(0, 0, 0, 0.8);
+		  border: none;
+		  line-height: 2vw;
+		  border-bottom: 0.1vw solid rgba(0, 0, 0, 0.1);
+	  }
+	  
+	  .sheet2 textarea {
+		  height: calc(100% - 9vw);
+		  width: calc(100% - 4vw);
+		  padding: 1.5vw 2vw;
+		  font-size: 3vw;
+		  border: none;
+		  resize: none;
+	  }
+
+}  
