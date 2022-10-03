@@ -2,6 +2,56 @@ var local = window.localStorage;
 
 var id = local.getItem('id');
 
+const docBody = document.body;
+
+// SELECT CONTAINER
+const darkModeToggle = document.querySelector(".dark-mode-toggle");
+
+// FUNCTION TO IMPLEMENT DARK MODE
+function darkMode() {
+	const sheet = document.querySelector(".sheet");
+	const notes = Array.from(document.querySelectorAll(".note"));
+	const input = document.getElementById("title");
+	const textArea = document.getElementById("description");
+
+	if (darkModeToggle.classList.contains("to-dark")) {
+		darkModeToggle.classList.remove("to-dark");
+		darkModeToggle.classList.add("to-light");
+
+		docBody.setAttribute("class", "dark-mode");
+
+		sheet.style.backgroundColor = "#333";
+
+		notes.forEach(note => {
+			note.classList.add("light-font");
+		});
+
+		input.style.backgroundColor = "#333";
+		input.style.color = "#fff";
+
+		textArea.style.backgroundColor = "#333";
+		textArea.style.color = "#fff";
+	} else {
+		darkModeToggle.classList.remove("to-light");
+		darkModeToggle.classList.add("to-dark");
+
+		docBody.removeAttribute("class");
+
+		sheet.style.backgroundColor = "#fff";
+
+		notes.forEach(note => {
+			note.classList.remove("light-font");
+		});
+
+		input.style.backgroundColor = "#fff";
+		input.style.color = "#000";
+
+		textArea.style.backgroundColor = "#fff";
+		textArea.style.color = "#000";
+	}
+}
+
+darkModeToggle.addEventListener("click", darkMode);
 
 if (id == undefined) {
 	local.setItem('id', 1);
@@ -50,8 +100,6 @@ function openData(id) {
 
 	document.querySelector(".back").addEventListener('click', () => { updatingData(id); });
 
-}
-
 document.querySelector(".back").addEventListener('click', openHome)
 
 function getFullDate() {
@@ -99,9 +147,21 @@ function createNote(title, time, id) {
 	div1.className = "note"
 	div1.id = "note" + id;
 
+	// CHECK IF BODY HAS "dark-mode" CLASS BEFORE CREATING A NOTE
+	if (docBody.classList.contains("dark-mode")) {
+		div1.classList.add("light-font");
+	} else {
+		div1.classList.remove("light-font");
+	}
+
 	if (title == "") {
 		title = "Untitled";
 	}
+
+	var h1 = document.createElement("h1");
+	h1.id = "title" + id;
+	h1.innerHTML = title;
+
 	var h1 = document.createElement("h1");
 	h1.id = "title" + id;
 	h1.innerHTML = title;
@@ -111,10 +171,13 @@ function createNote(title, time, id) {
 	var div2 = document.createElement('div');
 
 
-
 	var h2 = document.createElement('h2');
 	h2.id = "time" + id;
 	h2.innerHTML = time;
+
+	var h2 = document.createElement('h2');
+	h2.innerHTML = "Created on 30.06.2022";
+
 
 	var figure = document.createElement('figure');
 	figure.className = "settings";
@@ -149,6 +212,9 @@ function sendingData() {
 		window.localStorage.setItem('time' + id, time);
 
 		createNote(title.value, time, id);
+
+
+		createNote(title.value, id);
 
 		id = id + 1;
 		window.localStorage.setItem('id', id);
