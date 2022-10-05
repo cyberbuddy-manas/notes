@@ -109,7 +109,7 @@ section {
 }
 
 .dark-mode-toggle.to-light {
-  background-color: var(b);
+  background-color: var(--background);
 }
 
 .dark-mode-toggle.to-light i {
