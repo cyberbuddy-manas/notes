@@ -165,10 +165,6 @@ function createNote(title, time, id) {
 	h1.id = "title" + id;
 	h1.innerHTML = title;
 
-	var h1 = document.createElement("h1");
-	h1.id = "title" + id;
-	h1.innerHTML = title;
-
 	h1.addEventListener('click', () => { openData(id) });
 
 	var div2 = document.createElement('div');
@@ -178,8 +174,8 @@ function createNote(title, time, id) {
 	h2.id = "time" + id;
 	h2.innerHTML = time;
 
-	var h2 = document.createElement('h2');
-	h2.innerHTML = "Created on 30.06.2022";
+	// var h2 = document.createElement('h2');
+	// h2.innerHTML = "Created on 30.06.2022";
 
 
 	var figure = document.createElement('figure');
@@ -216,7 +212,7 @@ function sendingData() {
 
 		createNote(title.value, time, id);
 
-		createNote(title.value, id);
+		// createNote(title.value, id);
 
 		id = id + 1;
 		window.localStorage.setItem('id', id);
