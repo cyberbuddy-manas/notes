@@ -245,6 +245,14 @@ body.dark-mode .note h1:hover {
   background-color: black;
 }
 
+body.dark-mode .settings div {
+  background-color: var(--background);
+}
+
+body.dark-mode .note {
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
 .note.light-font * {
   color: #fff;
 }
