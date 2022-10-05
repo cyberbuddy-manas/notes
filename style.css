@@ -34,8 +34,9 @@
 
 body {
   background-color: var(--background);
-  display: grid;
-  place-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 100vh;
   transition: 0.3s all;
 }
@@ -54,6 +55,7 @@ section {
   width: 550px;
   height: 600px;
   box-shadow: 0 4px 19px rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
 }
 
 .nav {
@@ -66,6 +68,7 @@ section {
   text-transform: uppercase;
   font-size: 20px;
   color: var(--p-text);
+  border-radius: 1rem 1rem 0 0;
 }
 
 /* DARK MODE TOGGLE */
@@ -106,7 +109,7 @@ section {
 }
 
 .dark-mode-toggle.to-light {
-  background-color: #09e209;
+  background-color: var(--background);
 }
 
 .dark-mode-toggle.to-light i {
@@ -119,6 +122,7 @@ section {
   overflow-y: scroll;
   padding: 0;
   transition: 0.3s background-color;
+  border-radius: 0 0 1rem 1rem;
 }
 
 .blank {
@@ -241,6 +245,14 @@ body.dark-mode .note h1:hover {
   background-color: black;
 }
 
+body.dark-mode .settings div {
+  background-color: var(--background);
+}
+
+body.dark-mode .note {
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
 .note.light-font * {
   color: #fff;
 }
@@ -262,13 +274,15 @@ body.dark-mode .note h1:hover {
   text-transform: uppercase;
   font-size: 20px;
   color: var(--p-text);
+
+  border-radius: 1rem 1rem 0 0;
 }
 
 .nav2 .back {
-  width: 45px;
-  height: 45px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
-  background-color: var(--p-text);
+  background-color: rgba(255, 255, 255, 0.9);
   position: absolute;
   margin-left: 25px;
   cursor: pointer;
@@ -281,26 +295,27 @@ body.dark-mode .note h1:hover {
   position: absolute;
   width: 30%;
   height: 3px;
-  background-color: var(--background);
+  background-color: var(--p-text);
   border-radius: 5px;
 }
 
 .nav2 .back div:nth-child(1) {
   width: 55%;
-  height: 2.5px;
+  top: 50%;
+  transform: translateY(-50%);
   margin-left: 5px;
 }
 
 .nav2 .back div:nth-child(2) {
   transform: rotate(-45deg);
   margin-bottom: 9px;
-  margin-right: 12px;
+  margin-right: 17px;
 }
 
 .nav2 .back div:nth-child(3) {
   transform: rotate(45deg);
   margin-top: 9px;
-  margin-right: 12px;
+  margin-right: 17px;
 }
 
 .nav2 h1 {
@@ -321,7 +336,7 @@ body.dark-mode .note h1:hover {
   color: rgba(0, 0, 0, 0.8);
   border: none;
   line-height: 40px;
-  border-bottom: 2px solid rgba(0, 0, 0, 1);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
   background-color: var(--background);
 }
 
@@ -330,7 +345,7 @@ body.dark-mode .note h1:hover {
 }
 
 .sheet2 textarea {
-  height: calc(100% - 180px);
+  height: 100%;
   width: calc(100% - 80px);
   padding: 30px 40px;
   font-size: 18px;
@@ -338,6 +353,7 @@ body.dark-mode .note h1:hover {
   resize: none;
   background-color: var(--background);
   color: var(--p-text);
+  border-radius: 0 0 1rem 1rem;
 }
 
 .sheet2 textarea:focus {
@@ -360,8 +376,9 @@ body.dark-mode .note h1:hover {
 
   body {
     background-color: #f1f1f1;
-    display: grid;
-    place-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 100vh;
   }
 
@@ -370,6 +387,7 @@ body.dark-mode .note h1:hover {
     width: 88vw;
     height: 120vw;
     box-shadow: 0 0.2vw 0.95vw rgba(0, 0, 0, 0.1);
+    margin-bottom: 10rem;
   }
 
   .nav {
@@ -401,7 +419,7 @@ body.dark-mode .note h1:hover {
   .blank {
     color: var(--placeholder);
     font-weight: 400;
-    font-size: 19vw;
+    font-size: 1.5rem;
     text-align: center;
     margin-left: 0.5vw;
     margin-top: 10vw;
@@ -417,7 +435,7 @@ body.dark-mode .note h1:hover {
     cursor: pointer;
     position: relative;
     left: 70vw;
-    bottom: 23.75vw;
+    bottom: 15vw;
   }
 
   .btn div {
@@ -433,11 +451,10 @@ body.dark-mode .note h1:hover {
     width: calc(100% - 3vw);
     height: 9vw;
     border-bottom: 0.1vw solid rgba(0, 0, 0, 0.1);
-    padding: 1vw 2vw;
-    padding-right: 1vw;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    padding: 1vw 0vw 5vw 3vw;
   }
 
   .note h1 {
@@ -464,6 +481,7 @@ body.dark-mode .note h1:hover {
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
+    margin-right: 4vw;
   }
 
   .note .settings div {
@@ -493,12 +511,12 @@ body.dark-mode .note h1:hover {
   }
 
   .nav2 .back {
-    width: 5vw;
-    height: 5vw;
+    width: 8vw;
+    height: 8vw;
     border-radius: 50%;
     background-color: rgba(255, 255, 255, 0.9);
     position: absolute;
-    margin-left: 1.25vw;
+    margin-left: 4vw;
     cursor: pointer;
     display: flex;
     justify-content: center;
@@ -515,20 +533,18 @@ body.dark-mode .note h1:hover {
 
   .nav2 .back div:nth-child(1) {
     width: 55%;
-    height: 0.125vw;
+    height: 0.4vw;
     margin-left: 0.25vw;
   }
 
   .nav2 .back div:nth-child(2) {
-    transform: rotate(-45deg);
-    margin-bottom: 0.5vw;
-    margin-right: 0.6vw;
+    margin-bottom: 2vw;
+    margin-right: 2vw;
   }
 
   .nav2 .back div:nth-child(3) {
-    transform: rotate(45deg);
-    margin-top: 0.5vw;
-    margin-right: 0.6vw;
+    margin-top: 2vw;
+    margin-right: 2vw;
   }
 
   .nav2 h1 {
@@ -538,9 +554,11 @@ body.dark-mode .note h1:hover {
 
   .sheet2 {
     width: 100%;
-    height: calc(100% - 4vw);
+    height: 120vw;
     display: flex;
     flex-direction: column;
+    border-radius: 1rem;
+    background-color: #f1f1f1;
   }
 
   .sheet2 input[type="text"] {
