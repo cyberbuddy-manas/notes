@@ -73,7 +73,7 @@ section {
 
 /* DARK MODE TOGGLE */
 .dark-mode-toggle {
-  position: fixed;
+  position: absolute;
   bottom: 5rem;
   right: 4rem;
   display: flex;
