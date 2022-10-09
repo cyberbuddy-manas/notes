@@ -7,6 +7,13 @@ const docBody = document.body;
 // SELECT DARK MODE TOGGLE BUTTON
 const darkModeToggle = document.querySelector(".dark-mode-toggle");
 
+if (window.localStorage.getItem('mode') == undefined) {
+	// alert("hi")
+	if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+		window.localStorage.setItem('mode', 0);	//1 for dark mode
+	}
+}
+
 // FUNCTION TO IMPLEMENT DARK MODE
 function darkMode() {
 	const sheet = document.querySelector(".sheet");
@@ -32,6 +39,7 @@ function darkMode() {
 
 		noteBody.style.backgroundColor = "#333";
 		noteBody.style.color = "#fff";
+		window.localStorage.setItem('mode', 0);
 
 	} else {
 
@@ -52,11 +60,16 @@ function darkMode() {
 		noteBody.style.backgroundColor = "#fff";
 		noteBody.style.color = "#000";
 
+		window.localStorage.setItem('mode', 1);
 	}
 }
 
 // EVENT LISTENER TO TRIGGER "darkMode()"
 darkModeToggle.addEventListener("click", darkMode);
+
+if (window.localStorage.getItem('mode') == 0) {
+	darkMode();
+}
 
 if (id == undefined) {
 	local.setItem('id', 1);
