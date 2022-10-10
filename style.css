@@ -360,6 +360,11 @@ body.dark-mode .note {
   outline: none;
 }
 
+.trash-icon {
+  font-size: 24px;
+  color: red;
+  cursor: pointer;
+}
 /*====== Media Query ======*/
 
 @media only screen and (max-width: 768px) {
