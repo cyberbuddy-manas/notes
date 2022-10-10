@@ -1,81 +1,105 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>My Notes</title>
+    <link rel="shortcut icon" href="note.png" type="image/x-icon" />
 
-<head>
-	<title>My Notes</title>
+    <!--===== Meta Tags ======-->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="Notes App"
+      content="Author: Manas Gupta, Illustrator: Font Awesome and Flat Icon, Category: Application, Open Source: Yes"
+    />
+    <meta
+      name="description"
+      content="Note taking application made using Plain HTML, CSS, JavaScript and uses Browser Local Storage for storing notes. Note App, JavaScript Note Taking App, Open Source Project, Beginner Friendly Projects."
+    />
+    <meta name="robots" content="all" />
+    <meta name="googlebot" content="all" />
 
-	<!--===== Meta Tags ======-->
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===== Google Fonts ======-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
 
-	<!--===== Google Fonts ======-->
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <!--===== FONTAWESOME CDN =====-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
-	<!--===== FONTAWESOME CDN =====-->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-		integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
-		crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <link rel="stylesheet" href="base_style.css" />
+  </head>
 
-	<link rel="stylesheet" type="text/css" href="./style.css">
-	<link rel="stylesheet" href="base_style.css">
-</head>
+  <body>
+    <section id="home">
+      <div class="nav">
+        <h1>Notes</h1>
+      </div>
+      <div class="sheet">
+        <h1 class="blank">No Notes Yet</h1>
+      </div>
+      <div class="btn">
+        <div></div>
+        <div></div>
+      </div>
+    </section>
+    <section id="create">
+      <div class="nav2">
+        <div class="back">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <h1>Notes</h1>
+      </div>
+      <div class="sheet2">
+        <input type="text" id="title" placeholder="Title goes here" />
+        <textarea id="description" placeholder="Enter your notes"></textarea>
+      </div>
+    </section>
 
-<body>
-	<section id="home">
-		<div class="nav">
-			<h1>Notes</h1>
-		</div>
-		<div class="sheet">
-			<h1 class="blank">No Notes Yet</h1>
-		</div>
-		<div class="btn">
-			<div></div>
-			<div></div>
-		</div>
-	</section>
-	<section id="create">
-		<div class="nav2">
-			<div class="back">
-				<div></div>
-				<div></div>
-				<div></div>
-			</div>
-			<h1>Notes</h1>
-		</div>
-		<div class="sheet2">
-			<input type="text" id="title" placeholder="Title goes here">
-			<textarea id="description" placeholder="Enter your notes"></textarea>
-		</div>
-	</section>
+    <!-- DARK MODE TOGGLE SWITCH -->
+    <button type="button" class="dark-mode-toggle to-dark">
+      <i class="fa-solid fa-moon"></i>
+    </button>
 
-	<!-- DARK MODE TOGGLE SWITCH -->
-	<button type="button" class="dark-mode-toggle to-dark">
-		<i class="fa-solid fa-moon"></i>
-	</button>
+    <!-- FOOTER  -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="footer-col">
+            <h4>Contribute To The Project</h4>
+            <a href="https://github.com/cyberbuddy-manas/notes" title="github"
+              ><i class="fab fa-github"></i
+            ></a>
+          </div>
+          <div class="footer-col">
+            <h4>follow creator on &nbsp;&nbsp;</h4>
+            <a href="https://github.com/cyberbuddy-manas" title="github"
+              ><i class="fab fa-github"></i
+            ></a>
+          </div>
+          <div class="footer-col">
+            <h4>checkout contributors &nbsp;&nbsp;</h4>
+            <a
+              href="https://github.com/cyberbuddy-manas/notes/graphs/contributors"
+              title="github"
+              ><i class="fab fa-github"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </footer>
 
-  <!-- FOOTER  -->
-	<footer class="footer">
-		<div class="container">
-			<div class="row">
-				<div class="footer-col">
-					<h4>Contribute To The Project</h4>
-					<a href="https://github.com/cyberbuddy-manas/notes" title="github"><i class="fab fa-github"></i></a>
-				</div>
-				<div class="footer-col">
-					<h4>follow creator on &nbsp;&nbsp; </h4>
-					<a href="https://github.com/cyberbuddy-manas" title="github"><i class="fab fa-github"></i></a>
-				</div>
-				<div class="footer-col">
-					<h4>checkout contributors &nbsp;&nbsp; </h4>
-					<a href="https://github.com/cyberbuddy-manas/notes/graphs/contributors" title="github"><i class="fab fa-github"></i></a>
-				</div>
-			</div>
-		</div>
-	</footer>
-
-	<script type="text/javascript" src="./main.js"></script>
-</body>
-
+    <script type="text/javascript" src="./main.js"></script>
+  </body>
 </html>
