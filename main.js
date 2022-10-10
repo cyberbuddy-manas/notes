@@ -191,20 +191,28 @@ function createNote(title, time, id) {
 	// h2.innerHTML = "Created on 30.06.2022";
 
 
-	var figure = document.createElement('figure');
-	figure.className = "settings";
-
-	var div3 = document.createElement('div');
-	var div4 = document.createElement('div');
-	var div5 = document.createElement('div');
-
-	figure.append(div3, div4, div5);
+	var figure = document.createElement('div');
+	
+	figure.setAttribute("onClick", "deleteNote("+ id +");");
+	figure.innerHTML = `<i class="fa fa-trash trash-icon" id="delete-${div1.id}"></i>`;
 	div2.append(h2, figure);
 	div1.append(h1, div2);
 
 	document.querySelector(".sheet").append(div1);
 
 	document.querySelector('.blank').style.display = 'none';
+}
+
+
+function deleteNote(del_id){
+
+	console.log("Deleting" + del_id);
+	const noteDiv = document.getElementById(`note${del_id}`);
+	noteDiv.remove();
+	window.localStorage.removeItem('title' + del_id);
+	window.localStorage.removeItem('desc' + del_id);
+	window.localStorage.removeItem('time' + del_id);
+	
 }
 
 function updateNote(id) {
