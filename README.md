@@ -59,7 +59,7 @@ If you like this project, please consider supporting it by giving it a ⭐️. I
 
 <br>
 
-- This sup and other projects listed above are a part of Hacktoberfest 2022 and are open to all members of the GitHub community. Any member may contribute to these projects without being a collaborator or a maintainer and earn a T-shirt from DigitalOcean and DEV by making four valid pull requests (PRs) between October 1-31 (in any time zone).
+- This project and other projects listed above are a part of Hacktoberfest 2022 and are open to all members of the GitHub community. Any member may contribute to these projects without being a collaborator or a maintainer and earn a T-shirt from DigitalOcean and DEV by making four valid pull requests (PRs) between October 1-31 (in any time zone).
 
 - The first 40,000 participants (maintainers and contributors) who complete Hacktoberfest can elect to receive one of two prizes: a tree planted in their name, or the Hacktoberfest 2022 t-shirt.
 
