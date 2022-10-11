@@ -15,7 +15,7 @@
 
 If you want to practice to make a pull request, follow the CONTRIBUTING.md
 
- 
+
 
 Check out `good-first-issues` for contributing [here](https://github.com/cyberbuddy-manas/notes/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22)
 </div>
@@ -50,7 +50,7 @@ If you like this project, please consider supporting it by giving it a ⭐️. I
 
 - Happy Contributing! 🎉 
 - May you have a great Hacktoberfest 2022! 🎉
-- If you have any questions, feel free to ask me. I will be happy to help you. 😊
+- If you have any questions, feel free to ask me. It will be my pleasure to help you. 😊
 
 ### References
 
