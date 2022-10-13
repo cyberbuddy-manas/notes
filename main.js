@@ -87,7 +87,7 @@ function openCreate() {
 
 	title.value = "";
 	desc.value = "";
-	document.querySelector('.back').addEventListener('click', sendingData)
+	document.querySelector('.button-32').addEventListener('click', sendingData)
 }
 
 document.querySelector(".btn").onclick = openCreate;
@@ -119,6 +119,7 @@ function openData(id) {
 	document.querySelector(".back").addEventListener('click', () => { updatingData(id); });
 }
 
+document.querySelector(".button-32").addEventListener('click', openHome)
 document.querySelector(".back").addEventListener('click', openHome)
 
 function getFullDate() {
