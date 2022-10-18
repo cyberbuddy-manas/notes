@@ -7,35 +7,35 @@
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-around;
-	row-gap: 20px;
+	row-gap: 30px;
 
 }
 
 .footer {
-	background-color: #f7d736;
+	background-color: #36f7c0;
 	/* margin: -8%; */
 	padding: 10px 0;
 	bottom: 0;
 	width: 100%;
-	position: absolute;
+	position: relative;
 
 }
 
 .footer-col {
 
-	padding: 0 15px;
+	padding: 0 18px;
 	/* display: inline-block; */
 
 }
 
 .footer-col h4 {
 	font-size: 18px;
-	color: #454343;
+	color: #36f7c0;
 	text-transform: capitalize;
 	margin-bottom: 35px;
 	font-weight: 500;
-	position: relative;
-	display: inline;
+	position: absolute;
+	display: flex;
 }
 
 .footer-col h4::after {
