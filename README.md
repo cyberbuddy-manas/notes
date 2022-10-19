@@ -11,7 +11,7 @@
 
 <h4> You can update a feature or add a new one to contribute to this repository and I'll make sure to stay active to merge them.</h4>
 
-<h4> Feel free to contribute to this repo by creating an issue first to share your thoughts on your contributions. You can also update bugs to improve the application </h4>
+<h4> Feel free to contribute to this repo by creating an issue first to share your thoughts on your contributions. You can also update bugs/problems to improve the application </h4>
 
 If you want to practice to make a pull request, follow the CONTRIBUTING.md
 
