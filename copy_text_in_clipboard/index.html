@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Copying text in Clipboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <textarea id="copyText" cols="60" rows="5">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque molestias mollitia nostrum dolor soluta aliquid corporis modi quibusdam dignissimos velit doloribus facere hic reprehenderit autem sed, odit odio, minima assumenda. </textarea>
+        <div class="btn"><button>Copy in Clipboard</button><span class="tooltip">copied</span></div>
+        <textarea id="pasteText" cols="60" rows="5" placeholder="Paste your copied content here_"></textarea>
+    </div>
+    <script>
+        const copyText = document.querySelector("#copyText");
+        const pasteText = document.querySelector("#pasteText");
+        const button = document.querySelector("button");
+        const tooltip = document.querySelector(".tooltip");
+        button.addEventListener('click', function () {
+            copyText.select();
+            pasteText.value = "";
+            if (document.execCommand("copy")) {
+                pasteText.focus();
+                tooltip.classList.add("show");
+                setTimeout(function () {
+                    tooltip.classList.remove("show");
+                }, 700);
+            } else {
+                alert("Something went wrong!");
+            }
+        }); 
+    </script>
+</body>
+
+</html>

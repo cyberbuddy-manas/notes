@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    background: cyan;
+}
+
+html,
+body {
+    display: grid;
+    height: 100%;
+    place-items: center;
+}
+
+textarea {
+    padding: 10px;
+    font-size: 17px;
+    resize: none;
+    text-align: justify;
+    color: #202020;
+}
+
+textarea:focus {
+    outline-color: #16a085;
+    border-color: #16a085;
+}
+
+.btn {
+    margin: 5px 0 40px 0;
+}
+
+.btn button {
+    padding: 9px 15px;
+    font-size: 17px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    outline: none;
+    color: #f2f2f2;
+    font-weight: 500;
+    border-radius: 3px;
+    cursor: pointer;
+    background-color: #16a085;
+    background: linear-gradiant(#18b495, #16a085);
+}
+
+.btn .tooltip {
+    position: relative;
+    margin-left: 10px;
+    font-size: 17px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    border-radius: 3px;
+    color: #f2f2f2;
+    /* z-index: -1; */
+    background: linear-gradiant(#18b495, #16a085);
+    background-color: #16a085;
+    opacity: 0;
+    pointer-events: none; 
+    transition: opacity 0.8s, margin-left 0.4s;
+}
+
+.btn .tooltip.show {
+    margin-left: 10px;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.tooltip:before {
+    content: '';
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    background-color: #16a085;
+    background: linear-gradiant(#18b495, #16a085);
+    top: 50%;
+    left: -5px;
+    /* z-index: -1; */
+    transform: translateY(-50%) rotate(45deg);
+}
